@@ -35,7 +35,7 @@ python run_dynamic_expts.py --task 0 --model 0 --lambda_val 0.98 --sigma_val 0.0
 ```
 python run_vardelay_DE1_expt.py --lambda_val 0.98 --sigma_val 0.0
 ```
-Variable delay duration experiments are implemented per each task. Therefore, please use the corrsponding file for the task you want to run.
+Variable delay duration experiments are implemented per each task. Therefore, please use the corresponding file for the task you want to run.
 
 ## Analysis
 
