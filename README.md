@@ -1,6 +1,6 @@
 # Recurrent Memory
 
-*Note:* I will upload the updated repository here soon.
+**Note:** I will upload the updated repository here soon.
 
 This repository contains the code for reproducing the results reported in the following paper:
 
