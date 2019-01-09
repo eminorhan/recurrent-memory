@@ -4,7 +4,7 @@
 
 This repository contains the code for reproducing the results reported in the following paper:
 
-Orhan AE, Ma WJ (2018) [A diverse range of factors affect the nature of neural representations underlying short-term memory.](https://www.biorxiv.org/content/early/2018/01/08/244707) bioRxiv 244707.
+Orhan AE, Ma WJ (2019) [A diverse range of factors affect the nature of neural representations underlying short-term memory.](https://www.biorxiv.org/content/early/2018/01/08/244707) Nature Neuroscience.
 
 The code is written in [Theano](http://www.deeplearning.net/software/theano/) (0.8.2) + [Lasagne](http://lasagne.readthedocs.io/en/latest/) (0.2.dev1). The code was originally run on a local computer cluster. If you are interested in running the following experiments on a cluster, I have some simple shell scripts that can facilitate this. Please contact me about this or about any other questions or concerns. You can find my contact information on [my web page](https://sites.google.com/view/eminorhan).
 
