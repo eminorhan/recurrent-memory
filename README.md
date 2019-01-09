@@ -35,7 +35,7 @@ python run_dynamic_expts.py --task 0 --model 0 --lambda_val 0.98 --sigma_val 0.0
 ```
 python run_vardelay_expts.py --lambda_val 0.98 --sigma_val 0.0 --rho_val 0.0
 ```
-The directory `multitask` contains files pertaining to the multitask training condition.
+* The directory `multitask` contains files pertaining to the multitask training condition.
 
 ## Analysis
 
