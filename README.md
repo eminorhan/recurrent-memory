@@ -8,7 +8,7 @@ The code is written in [Theano](http://www.deeplearning.net/software/theano/) (0
 
 ## Experiments
 
-As described in the paper, there are five main experimental conditions.
+As described in the paper, there are six main experimental conditions.
 
 * To run experiments in the basic condition:
 ```
