@@ -18,7 +18,6 @@ from vardelay_utils import build_generators, build_loss, build_performance
 import generators, models
 import scipy.io as sio
 
-if __name__ == "__main__":
     parser = argparse.ArgumentParser(description='Recurrent Memory Experiment (Variable Delay Condition -2AFC)')
     parser.add_argument('--task', type=int, default=0, help='Task code')
     parser.add_argument('--model', type=int, default=0, help='Model code')
