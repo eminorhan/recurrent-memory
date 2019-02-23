@@ -70,7 +70,7 @@ ExptDict = {"model": model_list[m_ind],
 
 # Build task generators
 generator_first, test_generator_first = build_generators(ExptDict)
-    
+
 # Define the input and expected output variable
 input_var, target_var = T.tensor3s('input', 'target')   
 
