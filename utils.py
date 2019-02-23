@@ -14,6 +14,11 @@ import generators, models
 
 def compute_SI(hidr, entrpy_bins, window_size, r_threshold):
     # Compute SI scores for a number of trials
+    # hidr: activities of recurrent units
+    # entrpy_bins: number of bins used for estimating peak time entropy
+    # window_size: window size around peak time for calculating ridge-to-background ratio
+    # r_threshold: only consider recurrent units with mean responses above this
+    
     bs = hidr.shape[0]  # number of trials
     ts = hidr.shape[1]  # number of time points
 
