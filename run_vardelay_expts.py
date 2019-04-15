@@ -91,7 +91,7 @@ for i, (_, example_input, example_output, example_mask, s, opt_s) in generator:
         net_vec = np.asarray(net_vec)
         infloss = build_performance(s_vec, opt_vec, net_vec, t_ind)
         frac_rmse_vec.append(infloss)
-        print 'Batch #%d; Inf. loss: %.6f' % (i, infloss)
+        print 'Batch #%d; Fractional loss: %.6f' % (i, infloss)
         s_vec   = []
         opt_vec = []
         net_vec = []
@@ -113,7 +113,7 @@ s_vec   = np.asarray(s_vec)
 opt_vec = np.asarray(opt_vec)
 net_vec = np.asarray(net_vec)
 infloss_test = build_performance(s_vec, opt_vec, net_vec, t_ind)
-print 'Test data; Inf. loss: %.6f' % (infloss_test)
+print 'Test data; Fractional loss: %.6f' % (infloss_test)
 
 ex_hid_vec = np.asarray(ex_hid_vec)
 ex_hid_vec = np.reshape(ex_hid_vec,(-1, test_generator.stim_dur + test_generator.max_delay + test_generator.resp_dur, n_hid))
