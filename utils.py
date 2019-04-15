@@ -11,6 +11,7 @@ import lasagne.updates
 import lasagne.objectives
 import lasagne.init
 import generators, models
+from scipy.stats import entropy
 
 def compute_SI(hidr, entrpy_bins, window_size, r_threshold):
     # Compute SI scores for a number of trials
