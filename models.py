@@ -54,7 +54,7 @@ def LeInitRecurrent(input_var, mask_var=None, batch_size=1, n_in=100, n_out=1,
     l_hid_hid = DenseLayer(lasagne.layers.InputLayer((None, n_hid)), n_hid, 
                            W=LeInit(diag_val=diag_val, offdiag_val=offdiag_val), 
                            nonlinearity=lasagne.nonlinearities.linear)
-    l_rec = lasagne.layers.CustomRecurrentLayer(l_in, l_in_hid, l_hid_hid, nonlinearity=lasagne.nonlinearities.softplus, mask_input=l_mask, grad_clipping=100)
+    l_rec = lasagne.layers.CustomRecurrentLayer(l_in, l_in_hid, l_hid_hid, nonlinearity=lasagne.nonlinearities.rectify, mask_input=l_mask, grad_clipping=100)
 
     # Output Layer
     l_shp = ReshapeLayer(l_rec, (-1, n_hid))
