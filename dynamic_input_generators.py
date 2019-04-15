@@ -212,7 +212,7 @@ class ChangeDetectionTask(Task):
         C1ind          = np.where(C==1.0)[0]        # change
 
         S1             = np.pi * np.random.rand(self.n_loc, self.batch_size)
-        S2             = S1
+        S2             = S1.copy()
         S1             = np.repeat(S1,self.n_in,axis=0).T
         S1             = np.tile(S1,(self.stim_dur,1,1))
         S1             = np.swapaxes(S1,0,1)
@@ -295,7 +295,7 @@ class DelayedEstimationTask(Task):
             G = np.swapaxes(G,0,1)
                 
         S1             = np.pi * np.random.rand(self.n_loc, self.batch_size)
-        S              = S1.T
+        S              = S1.T.copy()
         S1             = np.repeat(S1,self.n_in,axis=0).T
         S1             = np.tile(S1,(self.stim_dur,1,1))
         S1             = np.swapaxes(S1,0,1)
@@ -363,7 +363,7 @@ class GatedDelayedEstimationTask(Task):
         C1ind          = np.where(C==1.0)[0]
                 
         S1             = np.pi * np.random.rand(self.n_loc, self.batch_size)
-        Sboth          = S1.T
+        Sboth          = S1.T.copy()
         S              = np.expand_dims(Sboth[:,0],axis=1) 
         S[C1ind,0]     = Sboth[C1ind,1] 
 
