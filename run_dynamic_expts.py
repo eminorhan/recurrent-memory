@@ -35,7 +35,6 @@ t_ind = args.task
 # Models and model-specific parameters
 model_list = [{"model_id":'LeInitRecurrent',"diag_val":diag_val,"offdiag_val":offdiag_val},
               {"model_id":'OrthoInitRecurrent',"init_val":diag_val},
-              {"model_id":'ResidualRecurrent',"leak_inp":1.0, "leak_hid":1.0},
               {"model_id":'GRURecurrent',"diag_val":diag_val,"offdiag_val":offdiag_val}]
 
 # Tasks and task-specific parameters
