@@ -294,14 +294,6 @@ def build_model(input_var,ExptDict):
                                               n_in=n_loc*n_in, n_out=n_out, 
                                               n_hid=n_hid, init_val=init_val, 
                                               out_nlin=out_nonlin)
-    elif model == 'ResidualRecurrent':
-        leak_inp = ExptDict["model"]["leak_inp"]
-        leak_hid = ExptDict["model"]["leak_hid"]
-        l_out, l_rec = models.ResidualRecurrent(input_var, batch_size=batch_size, 
-                                                n_in=n_loc*n_in, n_out=n_out, 
-                                                n_hid=n_hid, leak_inp=leak_inp, 
-                                                leak_hid=leak_hid, 
-                                                out_nlin=out_nonlin)
     elif model == 'GRURecurrent':
         diag_val     = ExptDict["model"]["diag_val"]
         offdiag_val  = ExptDict["model"]["offdiag_val"]
@@ -309,14 +301,7 @@ def build_model(input_var,ExptDict):
                                            n_in=n_loc*n_in, n_out=n_out, n_hid=n_hid, 
                                            diag_val=diag_val, offdiag_val=offdiag_val,
                                            out_nlin=out_nonlin)
-    elif model == 'LeInitRecurrentWithLayerNorm':
-        diag_val     = ExptDict["model"]["diag_val"]
-        offdiag_val  = ExptDict["model"]["offdiag_val"]
-        l_out, l_rec = models.LeInitRecurrentWithLayerNorm(input_var, batch_size=batch_size,
-                                              n_in=n_loc*n_in, n_out=n_out,
-                                              n_hid=n_hid, diag_val=diag_val,
-                                              offdiag_val=offdiag_val,
-                                              out_nlin=out_nonlin)
+        
     return l_out, l_rec
 
 def build_loss(pred_var,target_var,ExptDict):
