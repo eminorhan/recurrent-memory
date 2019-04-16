@@ -33,7 +33,7 @@ wdecay_coeff = args.rho_val
 m_ind = args.model
 t_ind = args.task
 
-model_list = ['LeInitRecurrent','ResidualRecurrent','GRURecurrent']
+model_list = ['LeInitRecurrent','GRURecurrent']
 
 # Task and model parameters
 model = model_list[m_ind]
@@ -50,9 +50,6 @@ if model == 'LeInitRecurrent':
     l_out, l_rec = models.LeInitRecurrent(input_var, mask_var=mask_var, batch_size=generator.batch_size,
                                           n_in=generator.n_in,  n_out=generator.n_out, n_hid=n_hid, diag_val=diag_val,
                                           offdiag_val=offdiag_val,  out_nlin=lasagne.nonlinearities.sigmoid)
-elif model == 'ResidualRecurrent':
-    l_out, l_rec = models.ResidualRecurrent(input_var, mask_var=mask_var, batch_size=generator.batch_size,
-                                            n_in=generator.n_in, n_out=generator.n_out, n_hid=n_hid, leak_inp=1.0, leak_hid=1.0)
 elif model == 'GRURecurrent':
     l_out, l_rec = models.GRURecurrent(input_var, mask_var=mask_var, batch_size=generator.batch_size, n_in=generator.n_in, n_out=generator.n_out, n_hid=n_hid)
 
