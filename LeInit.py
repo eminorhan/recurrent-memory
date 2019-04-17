@@ -8,16 +8,18 @@ from lasagne.utils import floatX
 import numpy as np
 
 class LeInit(Initializer):
-    """Initialize weights with diagonal matrix.
+    """Initialize weights with diagonal + off-diagonal random matrix.
     Parameters
     ----------
-     val : float
-        Constant value for weights.
+     diag_val : float  (diagonal scale)
+     offdiag_val : float  (off-diagonal scale)
     """
     def __init__(self, diag_val=1.0, offdiag_val=0.0):
         self.diag_val = diag_val
         self.offdiag_val = offdiag_val
 
     def sample(self, shape):
-        my_off_diag = self.offdiag_val*np.random.randn(shape[0],shape[0])
-        return floatX(np.eye(shape[0]) * self.diag_val + my_off_diag - np.diag(np.diag(my_off_diag)))
+        if len(shape)!=2 or shape[0]!=shape[1]
+            raise ValueError('LeInit initializer can only be used for 2D square matrices.')
+        off_diag_part = self.offdiag_val*np.random.randn(shape[0],shape[1])
+        return floatX(np.eye(shape[0]) * self.diag_val + off_diag_part - np.diag(np.diag(off_diag_part)))
