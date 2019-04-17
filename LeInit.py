@@ -2,7 +2,6 @@
 """
 Created on Wed Sep 21 20:00:31 2016 by emin
 """
-
 from lasagne.init import Initializer
 from lasagne.utils import floatX
 import numpy as np
