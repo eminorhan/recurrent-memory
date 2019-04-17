@@ -59,10 +59,10 @@ def build_loss(pred_var, target_var, resp_dur, t_ind):
 def build_performance(s_vec, opt_vec, net_vec, t_ind):
     if t_ind==0 or t_ind==1 or t_ind==4:
         rmse_opt = np.nanmean(np.mod(np.abs(s_vec - opt_s_vec), np.pi))
-        rmse_net = np.nanmean( np.mod(np.abs(np.squeeze(s_vec) - np.squeeze(ex_pred_vec)), np.pi))
-
+        rmse_net = np.nanmean(np.mod(np.abs(np.squeeze(s_vec) - np.squeeze(ex_pred_vec)), np.pi))
         performance = (rmse_net - rmse_opt) / rmse_opt
+        
     elif t_ind==2 or t_ind==6 or t_ind==8:
-        performance = np.nanmean(opt_vec * np.log(opt_vec/net_vec) + (1.0 - opt_vec) * np.log((1.0 - opt_vec)/(1.0 - net_vec)) )\
-                      / np.nanmean( opt_vec * np.log(2.0*opt_vec) + (1.0-opt_vec) * np.log(2.0*(1.0-opt_vec)) )
+        performance = np.nanmean(opt_vec * np.log(opt_vec/net_vec) + (1.0 - opt_vec) * np.log((1.0 - opt_vec)/(1.0 - net_vec)))\
+                      / np.nanmean(opt_vec * np.log(2.0*opt_vec) + (1.0-opt_vec) * np.log(2.0*(1.0-opt_vec)))
     return performance
