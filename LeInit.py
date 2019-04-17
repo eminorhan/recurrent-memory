@@ -19,7 +19,8 @@ class LeInit(Initializer):
         self.offdiag_val = offdiag_val
 
     def sample(self, shape):
-        if len(shape)!=2 or shape[0]!=shape[1]
+        if len(shape) != 2 or shape[0] != shape[1]:
             raise ValueError('LeInit initializer can only be used for 2D square matrices.')
-        off_diag_part = self.offdiag_val*np.random.randn(shape[0],shape[1])
+            
+        off_diag_part = self.offdiag_val * np.random.randn(shape[0], shape[1])
         return floatX(np.eye(shape[0]) * self.diag_val + off_diag_part - np.diag(np.diag(off_diag_part)))
