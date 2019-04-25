@@ -14,7 +14,7 @@ As described in the paper, there are six main experimental conditions.
 ```
 python run_basic_expts.py --task 0 --model 0 --lambda_val 0.98 --sigma_val 0.0 --rho_val 0.0
 ```
-where `task` is the integer code for the task, `model` is the integer code for the model, `lambda_val` is the value of the lambda_0 hyper-parameter, `sigma_val` is the value of the sigma_0 hyper-parameter, and `rho_val` is the value of the rho hyper-parameter in the paper. For the tasks reported in the paper, use the following integer codes for `task`: DE-1 (0), DE-2 (1), CD (2), GDE (4), 2AFC (6), Sine (7), COMP (8).   
+where `task` is the integer code for the task, `model` is the integer code for the model, `lambda_val` is the value of the lambda_0 hyper-parameter, `sigma_val` is the value of the sigma_0 hyper-parameter divided by `sqrt(N)` (where `N=500` in all simulations), and `rho_val` is the value of the rho hyper-parameter in the paper. For the tasks reported in the paper, use the following integer codes for `task`: DE-1 (0), DE-2 (1), CD (2), GDE (4), 2AFC (6), Sine (7), COMP (8).   
 
 * To run experiments in the Hebbian synaptic plasticity condition:
 ```
