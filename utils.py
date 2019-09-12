@@ -327,7 +327,8 @@ def build_performance(s_vec,opt_vec,net_vec,ExptDict):
         rmse_net = np.nanmean(np.mod(np.abs(np.squeeze(s_vec) - np.squeeze(net_vec)), np.pi))
         infloss  = (rmse_net - rmse_opt) / rmse_opt
     elif task in ['CD1','CD2','Harvey2012','Harvey2012Dynamic','Harvey2016','COMP']:
-        infloss = np.nanmean( opt_vec * np.log(opt_vec/net_vec) + (1.0 - opt_vec) * np.log((1.0 - opt_vec)/(1.0 - net_vec)) ) / np.nanmean( opt_vec * np.log(2.0*opt_vec) + (1.0-opt_vec) * np.log(2.0*(1.0-opt_vec)) ) 
+        infloss = np.nanmean( opt_vec * np.log(opt_vec/net_vec) + (1.0 - opt_vec) * np.log((1.0 - opt_vec)/(1.0 - net_vec)) ) / 
+        np.nanmean( opt_vec * np.log(2.0*opt_vec) + (1.0-opt_vec) * np.log(2.0*(1.0-opt_vec)) ) 
     elif task in ['SINE']:
         infloss = np.mean(np.abs(np.squeeze(opt_vec) - np.squeeze(net_vec)))
     return infloss
